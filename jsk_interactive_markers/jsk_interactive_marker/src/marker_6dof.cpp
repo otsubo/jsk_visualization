@@ -218,7 +218,9 @@ protected:
     object_marker_control.always_visible = true;
     object_marker_control.markers.push_back(object_marker);
     int_marker.controls.push_back(object_marker_control);
-  
+    object_marker_control.interaction_mode = visualization_msgs::InteractiveMarkerControl::MOVE_ROTATE_3D;
+    int_marker.controls.push_back(object_marker_control);
+
     visualization_msgs::InteractiveMarkerControl control;
     if (show_6dof_circle_) {
       control.orientation.w = 1;
